@@ -16,10 +16,20 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->string('driver_license_number')->nullable();
+            $table->string('driver_license_country')->nullable();
+            $table->date('driver_license_expiry')->nullable();
+            $table->string('preferred_language', 5)->default('en');
+            $table->string('preferred_currency', 3)->default('EUR');
+            $table->foreignId('region_id')->constrained('regions')->onDelete('restrict');
             $table->string('workos_id')->unique();
+            $table->foreignId('organization_id')->nullable()->constrained()->onDelete('set null');
             $table->rememberToken();
             $table->text('avatar');
             $table->timestamps();
+
+            $table->index(['workos_id', 'organization_id', 'region_id']);
         });
 
         Schema::create('sessions', function (Blueprint $table) {

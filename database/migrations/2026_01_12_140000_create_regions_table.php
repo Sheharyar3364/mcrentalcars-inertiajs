@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('organizations', function (Blueprint $table) {
+        Schema::create('regions', function (Blueprint $table) {
             $table->id();
+            $table->string('code', 10)->unique();   // eu, uae, us
+            $table->string('name');                 // Europe, UAE
+            $table->string('currency', 3);          // EUR, AED, USD
+            $table->string('timezone')->nullable(); // Optional
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('organizations');
+        Schema::dropIfExists('regions');
     }
 };
