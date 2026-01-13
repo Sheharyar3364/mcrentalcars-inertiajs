@@ -26,9 +26,10 @@ return new class extends Migration
             $table->string('workos_id')->unique();
             $table->foreignId('organization_id')->nullable()->constrained()->onDelete('set null');
             $table->rememberToken();
-            $table->text('avatar');
+            $table->text('avatar')->nullable();
             $table->timestamps();
-
+            $table->softDeletes();
+            $table->string('password')->nullable();
             $table->index(['workos_id', 'organization_id', 'region_id']);
         });
 
