@@ -22,7 +22,7 @@ return new class extends Migration
             $table->date('driver_license_expiry')->nullable();
             $table->string('preferred_language', 5)->default('en');
             $table->string('preferred_currency', 3)->default('EUR');
-            $table->foreignId('region_id')->constrained('regions')->onDelete('restrict');
+            $table->foreignId('region_id')->nullable()->constrained('regions')->onDelete('restrict');
             $table->string('workos_id')->unique();
             $table->foreignId('organization_id')->nullable()->constrained()->onDelete('set null');
             $table->rememberToken();

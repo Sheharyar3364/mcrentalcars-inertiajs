@@ -1,4 +1,3 @@
-// ✅ COMPLETE Category Model
 <?php
 
 namespace App\Models;
