@@ -13,7 +13,7 @@ class LocationPolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class LocationPolicy
      */
     public function view(User $user, Location $location): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class LocationPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class LocationPolicy
      */
     public function update(User $user, Location $location): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -45,7 +45,7 @@ class LocationPolicy
      */
     public function delete(User $user, Location $location): bool
     {
-        return false;
+        return true;
     }
 
     /**

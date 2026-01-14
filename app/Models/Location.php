@@ -31,6 +31,7 @@ class Location extends Model
     protected function casts(): array
     {
         return [
+            'name' => 'array',
             'opening_hours' => 'array',
             'latitude' => 'decimal:7',
             'longitude' => 'decimal:7',
