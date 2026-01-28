@@ -13,12 +13,15 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class MakeResource extends Resource
 {
     protected static ?string $model = Make::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-building-office-2';
+
+    protected static string|UnitEnum|null $navigationGroup = 'Fleet Management';
 
     public static function form(Schema $schema): Schema
     {

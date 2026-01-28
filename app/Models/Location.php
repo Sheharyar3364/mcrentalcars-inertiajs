@@ -69,4 +69,11 @@ class Location extends Model
     {
         return $query->where('region', $region);
     }
+
+
+    public function scopeOrderByName($query, string $direction = 'asc')
+    {
+        $locale = app()->getLocale(); // or 'en'
+        return $query->orderByRaw("name->>'{$locale}' {$direction}");
+    }
 }

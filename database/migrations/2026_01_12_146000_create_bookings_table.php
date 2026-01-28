@@ -71,7 +71,7 @@ return new class extends Migration
             $table->decimal('fuel_level_end', 3, 1)->nullable();
 
             $table->timestamps();
-
+            $table->softDeletes();
             // Indexes
             $table->index(['user_id', 'status']);
             $table->index(['vehicle_id', 'status', 'pickup_date', 'return_date']); // For availability checks

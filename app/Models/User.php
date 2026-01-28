@@ -35,6 +35,7 @@ class User extends Authenticatable
         'workos_id',
         'organization_id',
         'avatar',
+        'email_verified_at'
     ];
 
     /**
